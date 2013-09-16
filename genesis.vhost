@@ -1,0 +1,21 @@
+<VirtualHost *:80>
+   DocumentRoot "/home/daniel/Projetos/Sites/Genesis/public"
+   ServerName genesis.local
+   ServerAlias genesis.dev
+
+   # This should be omitted in the production environment
+   SetEnv APPLICATION_ENV development
+
+   <Directory "/home/daniel/Projetos/Sites/Genesis/public">
+       Options Indexes MultiViews FollowSymLinks
+       AllowOverride All
+       Order allow,deny
+       Allow from all
+   </Directory>
+
+  ErrorLog /home/daniel/Projetos/Sites/Genesis/data/logs/error-apache.log
+  CustomLog /home/daniel/Projetos/Sites/Genesis/data/logs/access-apache.log common
+  LogLevel warn
+  
+
+</VirtualHost>
